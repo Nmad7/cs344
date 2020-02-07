@@ -1,0 +1,43 @@
+Exercise 1.1
+1. Is the GPS problem solver implemented as a class or as a function?
+It is implemented as a function.
+2. The solver requires initial states, goal states and operators. Of what type are these objects?
+The initial states, goal states, and operators are lists of strings.
+3. Is the mechanism recursive? If so, how does it implement its recursion?
+The mechanism is recursive. The mechanism first looks through operators for the final goal state
+as an 'add'.It then recursively achieves all of the final goal's preconditions (making sure to add
+each new goal achieved to a goal stack to prevent looping) by making the precondition the new
+final goal in a recursive call eventually returning the correct order of actions that will result
+in the final goal.
+4. What famous puzzle does this code model and what are the rules of that puzzle? Does the code faithfully implement the puzzle?
+This code models the Monkey and Banana Problem. This code does not model the puzzle faithfully as it does not include a stick for the monkey to hit the bananas with.
+5. What components does each domain action specify?
+Each domain action specifies the preconditions to perform the action, the end state of the action, and what states do not hold true after the action is performed. It specifies the
+elements that make up its version of the monkey and the banana problem.
+6. How does the GPS mechanism solve the problem? Be prepared to specify this in detail. You can use the logging feature to print a trace of the mechanism’s deliberations.
+GPS achieves the problem by searching in this order,
+Achieving: not hungry
+  Consider: eat bananas
+    Achieving: has bananas
+    Consider: grasp bananas
+      Achieving: at bananas
+      Consider: climb on chair
+        Achieving: chair at middle room
+        Consider: push chair from door to middle room
+          Achieving: chair at door
+          Achieving: at door
+        Action: push chair from door to middle room
+        Achieving: at middle room
+        Achieving: on floor
+      Action: climb on chair
+      Achieving: empty handed
+      Consider: drop ball
+        Achieving: has ball
+      Action: drop ball
+    Action: grasp bananas
+  Action: eat bananas
+7. Is this code artificially intelligent? If so, which definition (or definitions) of AI from the text does it satisfy?
+The code only fits the AI definition of "Acting Rationally" as it was able to figure out the rational actions to take to
+reach a goal. It does not seem human in thought or action and also is not really using the logic of thinking rationally.
+8. Would a monkey who/that solves the problem in the real world be displaying intelligence?
+It would be displaying some level of intelligence but not human like intelligence.
