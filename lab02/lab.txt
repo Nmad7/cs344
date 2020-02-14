@@ -1,3 +1,4 @@
+Exercise 2.1
 1. Which of the local search algorithms solves the problem? How well does each algorithm do?
 Both of the local search algorithms solves the problem correctly. Each algorithm finds the exact maximum of the graph.
 2. Which algorithm works more quickly?
@@ -10,4 +11,35 @@ the delta very small means the algorithms have to make a large amount of small j
 to make it to the maximum of the graph extending the time it takes to get to the max.
 The algorithms will not also not find the max if, by only jumping by that, the max is unattainable.
 5. What is the purpose of the exp_schedule() method in the simulated annealing function call?
+The exp_scheduling is the method that cools down the temperature over time so simulated annealing makes
+less extreme jumps over time.
 
+Exercise 2.2
+1. How do each of the algorithms do on this problem space? Why?
+Both algorithms do not always find the maximum value. For hillclimbing, it will always just go up the nearest
+incline in the graph until it reaches the local maximum. The simulated annealing algorithm usually gets closer
+due to its random jumps but still will not always find the maximum.
+2. Does the starting value make any difference here?
+The starting value makes a big difference as starting at a small x or an x on a declining slope will lead
+hillclimbing to find a smaller local maximum and means that simulated annealing has to make many more jumps
+which it will do less of as time goes on.
+3. Does modifying the step size (i.e., delta) affect the operation of the two algorithms? Why or why not?
+Yes, modifying the step size to be larger means the algorithms will jump further for every move they make.
+This means they will make more extreme movements around the graph sometimes for better and sometimes for worse.
+4. What are the maximum and minimum possible values here, and how do the two algorithms score with respect to them?
+Respecting a maximum x of 30 means the maximum value should be 30 at (30,30). The two algorithms are generally poor
+at finding this number but simulated annealing almost always gets closer than hill climbing.
+
+Exercise 2.3
+1. How does each algorithm do with these restarts? Why?
+
+2 What are the average values of the runs for each of the algorithms?
+
+3. If one of the algorithms does better, explain why; if not, explain why not.
+
+Exercise 2.4
+1. For which algorithm does beam search make the most sense?
+
+2. How many solutions could you maintain with reasonable space and time constraints?
+
+3. How would you modify the code to implement beam search? How is it different from random restarts, if at all?
