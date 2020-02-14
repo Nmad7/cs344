@@ -1,0 +1,13 @@
+1. Which of the local search algorithms solves the problem? How well does each algorithm do?
+Both of the local search algorithms solves the problem correctly. Each algorithm finds the exact maximum of the graph.
+2. Which algorithm works more quickly?
+Hill climbing solves the problem more quickly than annealing solution.
+3. Does the starting value for x make any difference? Why or why not?
+The starting should not
+4. What affect does changing the delta step value make on each algorithm? Why?
+As the delta tells each algorithm how far to jump each time on the graph, making
+the delta very small means the algorithms have to make a large amount of small jumps
+to make it to the maximum of the graph extending the time it takes to get to the max.
+The algorithms will not also not find the max if, by only jumping by that, the max is unattainable.
+5. What is the purpose of the exp_schedule() method in the simulated annealing function call?
+
