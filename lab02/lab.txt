@@ -32,14 +32,30 @@ at finding this number but simulated annealing almost always gets closer than hi
 
 Exercise 2.3
 1. How does each algorithm do with these restarts? Why?
-
+Both hillclimb and simulated annealing do well the restarts and generally find the best value (given
+a reasonable amount of restarts) if the best value of the restarts is kept.
 2 What are the average values of the runs for each of the algorithms?
+Assuming a delta of 1, the average value of the runs for hillclimbing was around 15.
+While the simulated annealing often keeps going past our max value for our graph, the
+average of its runs is generally around 20 which is better than hillclimbing.
 
 3. If one of the algorithms does better, explain why; if not, explain why not.
-
+Both algorithms generally find the maximum of the graph when restarted enough times and
+therefore do about the same (with simulated annealing taking longer). While on
+average hillclimbing preforms worse in the individual case, it is able to find the max
+if it is restarted enough.
 Exercise 2.4
 1. For which algorithm does beam search make the most sense?
-
+It makes the most sense to use beam search with hill climbing.
 2. How many solutions could you maintain with reasonable space and time constraints?
-
+You can maintain a very large amount of solutions depending on the hardware as each
+solution set is only k large for each level (local beam trims off bad ones). This means
+local beam is only storing current states at any time. Local beam search would also
+filter out many bad initial states very quickly making it fairly fast.
 3. How would you modify the code to implement beam search? How is it different from random restarts, if at all?
+In comparison to random restarts, in local beam search one does not fully
+follow through with every initial state all the way. Instead, after initial states
+are chosen they are pruned down to only the top "k" states who have the best value.
+To do this, I would start with initial states and then check all the next possible state values.
+These values would then be put into a list so a limited number of states with the top value
+could be chosen to continue from. Then this would repeat until the goal is reached.
