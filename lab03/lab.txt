@@ -1,0 +1,21 @@
+nqueens depth first has issues
+set a max steps to see where it dies (around 100) on the 8x8
+ac3 fails in nqueens if theres too many options (it has to be constrained)
+forward searching narrows the search space
+
+
+
+Exercise 3.1
+Solved: ALL
+Easy: AC-3, backtracking search (when modified)
+Harder
+Hardest:
+Exercise 3.1
+a.
+For the solved sudoku problem all algorithms arrive work very fast. In the easy problem the only algorithm that can
+arrive at the solution is AC-3 but all of the other algorithms cannot solve the problem in a reasonable amount of time.
+For the harder and hardest problem no algorithms are capable of solving them.
+TODO:ADD MORE ABOUT capabilities of algorithsms
+
+b.
+If in the backtracking search the select_unassigned_variable parameter was changed to MRV,
