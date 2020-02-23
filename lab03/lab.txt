@@ -1,0 +1,75 @@
+Nqueens backtracking is broken
+do about 100 steps for 8x8 board
+
+Exercise 3.1
+a. For the already solved sudoku problem all of the algorithms recognize
+that the board is already solved very quickly. Upon switching to the easy
+sudoku problem, the AC3 algorithm is the only algorithm that is capable of
+solving the board in a reasonable amount of time. When either the hard
+problem or the hardest problem is used none algorithms can solve them. The
+AC3 cannot solve them anymore due to their complexity and AC3's lack of backtracking.
+Due to backtracking selecting the next unassigned variable in order instead
+of using an actual heuristic and lack of any forward checking this algorithm
+takes much too long as it does not make intelligent choices and keeps having
+to backtrack. min_conflicts has a similar problem with sudoku as it will run
+out of steps before manipulating the sudoku board to the correct answer from
+its random starting point.
+
+b.
+Using just minimum remaining values did not allow the algorithm to do any better.
+Using forward-checking allowed the algorithm to complete even the hardest puzzle
+which means that using them in combination also allowed the algorithm to complete
+the hardest puzzle. This means that, assuming minimum remaining values does not decrease
+performance rather than improve it, a backtracking algorithm that chooses the next
+variable by minimum remain values and also uses forward checking is the most
+effective algorithm for sudoku among our algorithms.
+
+
+Exercise 3.2 Nqueens
+a.
+AC3 is unable to solve any n for the N-Queens problem as it does
+not backtrack. Backtracking is a complete algorithm in that it
+should always find the solution if it exists so it should be able
+to find a solution for any n. In reality though, backtracking seems
+to increase in time exponentially meaning anything past 23 or 24 begins
+to take too long. Min-Conflicts on the other hand is very good with the
+N-Queens problem and can do any n size as long as it is given enough steps.
+N-Queens is an easy problem for n-queens as the solutions are densely
+distributed. Realistically though, this implementation of the algorithm
+begins to take a while after a couple thousands of ns (around 5000 or 6000).
+
+b.
+The backtracking settings that work the best for the N-Queens problem is
+forward checking and mrv. Minimum remaining values allows the algorithm
+to assign variables with the most constraints so less time is spent on
+going down useless search paths. Forward checking will also help in
+eliminating paths of thought for placing the pieces that will result in
+failures.
+
+c.
+Min-Conflicts requires a step number of at least somewhere in the 50s to solve any
+n number of queens. This is because the run time of min conflicts is mostly independent
+of the n size.
+
+Exercise 3.3
+Compare and contrast specifications for csp and traditional problems.
+Consider nature of states, domains, actions, results, goal tests
+a.
+Within their specifications, both csp and traditional problems share a need for
+defined states, possible actions from a state, the result of a state, as well as
+a way to test if a state is a goal state. A csp, though, also has variables,
+a domain of values that variable can be, and also constraints that need to be
+specified to know if a goal state is reached. In a traditional problem, though,
+the goal state is just a state (or list of states) that the traditional problem
+stops at when it reaches.
+
+Compare and contrast nature of heuristics deployed in traditional and
+constraint based problem solving
+b.
+In a traditional problem, the heuristics deployed can vary but are generally
+based around the value of a state. The heuristic a problem uses defines the value
+of a state one is at. For instance, in a shortest route problem the heuristic could
+be a function that gives a value to straight-line distance from a node's state
+to a goal (the algorithm would try to minimize this). A csp on the other hand
+will use the least number of constraints infringed upon as a way of finding the
+value of a state.
