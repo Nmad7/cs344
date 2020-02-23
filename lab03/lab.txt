@@ -1,5 +1,3 @@
-Nqueens backtracking is broken
-do about 100 steps for 8x8 board
 
 Exercise 3.1
 a. For the already solved sudoku problem all of the algorithms recognize
@@ -52,8 +50,6 @@ n number of queens. This is because the run time of min conflicts is mostly inde
 of the n size.
 
 Exercise 3.3
-Compare and contrast specifications for csp and traditional problems.
-Consider nature of states, domains, actions, results, goal tests
 a.
 Within their specifications, both csp and traditional problems share a need for
 defined states, possible actions from a state, the result of a state, as well as
@@ -63,8 +59,6 @@ specified to know if a goal state is reached. In a traditional problem, though,
 the goal state is just a state (or list of states) that the traditional problem
 stops at when it reaches.
 
-Compare and contrast nature of heuristics deployed in traditional and
-constraint based problem solving
 b.
 In a traditional problem, the heuristics deployed can vary but are generally
 based around the value of a state. The heuristic a problem uses defines the value
