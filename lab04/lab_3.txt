@@ -1,0 +1,7 @@
+a. Drug Testing
+i.P(User)=.089
+ii. P(test|user)= .99
+iii. P(¬test | user) = .01
+iv. P(test | ¬user) = .02
+v. P(User | test) = (using normalization) P(test|user)*P(user) = (.99/(.99+.089))*(.089/(.99+.089)) = .0832
+b. Breast Cancer
