@@ -3,5 +3,19 @@ i.P(User)=.089
 ii. P(test|user)= .99
 iii. P(¬test | user) = .01
 iv. P(test | ¬user) = .02
-v. P(User | test) = (using normalization) P(test|user)*P(user) = (.99/(.99+.089))*(.089/(.99+.089)) = .0832
+v. P(User | test) = P(test|user)*P(user)/P(test)
+P(User | test) =  P(test|user)*P(user)/(P(test|user)*P(user) + P(test|¬user)P(¬user))
+P(User | test) = .99*.089/(.99*.089+.02*.911)
+P(User | test) =.829
 b. Breast Cancer
+Need P(cancer | test)
+P(cancer) = 0.01
+P(¬cancer) = 0.99
+P(test | cancer) = .80
+P(cancer | ¬test) = .096
+Calculation work:
+P(cancer | test) = (P(test | cancer) * P(cancer))/(P(test)
+P(cancer | test) = (P(test | cancer) * P(cancer))/(P(test|cancer)*P(Cancer) + P(test|¬cancer)P(¬cancer))
+P(cancer | test) = (.80*.01)/(.80*.01+.096*.99)
+P(cancer | test) = .777
+
