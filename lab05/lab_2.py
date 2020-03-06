@@ -1,6 +1,5 @@
 """
-This module implements the Bayesian network shown in the text, Figure 14.2.
-It's taken from the AIMA Python code.
+This module implements a Bayesian network
 
 @author: kvlinden
 @student: Noah Madrid
@@ -31,7 +30,7 @@ Yes the results make sense. One failed test has a very large impact on the proba
 P(Cancer | Test1 ∧ Test2)=  α P(C, t1, t2) = α P(c) * P(t1| C) * P(t2| C)
 α <.01*.9*.9, .99*.2*.2>
 (1/.0081+.0396) <0.0081,0.0396>
-<0.17,0.83>
+<0.17,0.83> 
 
 P(Cancer | Test1 ∧ ¬Test2) = α P(C, t1, ¬t2) = α P(c) * P(t1| C) * P(¬t2| C)
 α < , >
