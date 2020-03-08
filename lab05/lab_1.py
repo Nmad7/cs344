@@ -46,6 +46,13 @@ print(gibbs_ask('Burglary', dict(JohnCalls=T, MaryCalls=T), burglary).show_appro
 # See the explanation of the algorithms in AIMA Section 14.4.
 
 '''
+enumeration_ask
+False: 0.716, True: 0.284
+elimination_ask
+False: 0.716, True: 0.284
+gibbs_ask
+False: 0.708, True: 0.292
+
 No, gibbs_ask gives a slightly different answer than enumeration_ask. Elimination_ask should give (and does give) the 
 same answer as enumeration_ask as it removes needless calculations. Gibbs, on the other hand, randomly assigns
 each non-evidence variable (in this case JohnCalls and MaryCalls) and samples them to get an estimate probability.
