@@ -33,4 +33,22 @@ print(enumeration_ask('Burglary', dict(Alarm=T), burglary).show_approx())
 # Compute P(Burglary | john ∧ mary)
 print(enumeration_ask('Burglary', dict(JohnCalls=T, MaryCalls=T), burglary).show_approx())
 
+'''
+Exercise 5.4
+'''
+print("\nExercise 5.4\n")
+# Compute P(Burglary | John and Mary both call).
+print(enumeration_ask('Burglary', dict(JohnCalls=T, MaryCalls=T), burglary).show_approx())
+# elimination_ask() is a dynamic programming version of enumeration_ask().
+print(elimination_ask('Burglary', dict(JohnCalls=T, MaryCalls=T), burglary).show_approx())
+# gibbs_ask() is an approximation algorithm helps Bayesian Networks scale up.
+print(gibbs_ask('Burglary', dict(JohnCalls=T, MaryCalls=T), burglary).show_approx())
+# See the explanation of the algorithms in AIMA Section 14.4.
+
+'''
+No, gibbs_ask gives a slightly different answer than enumeration_ask. Elimination_ask should give (and does give) the 
+same answer as enumeration_ask as it removes needless calculations. Gibbs, on the other hand, randomly assigns
+each non-evidence variable (in this case JohnCalls and MaryCalls) and samples them to get an estimate probability.
+'''
+
 

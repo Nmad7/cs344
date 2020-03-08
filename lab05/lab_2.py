@@ -25,14 +25,18 @@ print(enumeration_ask('Cancer', dict(Test1=T, Test2=T), cancer).show_approx())
 print(enumeration_ask('Cancer', dict(Test1=T, Test2=F), cancer).show_approx())
 
 '''
-Yes the results make sense. One failed test has a very large impact on the probability of having cancer\
-#ADD MORE.
+Yes the results make sense. One failed test has a very large impact on the probability of having cancer 
+given that the probability of actually having cancer in the first
+place is so low and the tests have are "fairly" accurate.
+
 P(Cancer | Test1 ∧ Test2)=  α P(C, t1, t2) = α P(c) * P(t1| C) * P(t2| C)
 α <.01*.9*.9, .99*.2*.2>
 (1/.0081+.0396) <0.0081,0.0396>
 <0.17,0.83> 
 
 P(Cancer | Test1 ∧ ¬Test2) = α P(C, t1, ¬t2) = α P(c) * P(t1| C) * P(¬t2| C)
-α < , >
+α <.01*.9*.2, .99*.2*.9>
+α <.0018,.1782>
+<.01,.99>
 
 '''
