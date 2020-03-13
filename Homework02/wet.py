@@ -23,10 +23,10 @@ print(enumeration_ask('Cloudy', dict(), wet).show_approx())
 print(enumeration_ask('Sprinkler', dict(Cloudy=T), wet).show_approx())
 
 # Compute P(Cloudy| the sprinkler is running and it’s not raining)
-print(enumeration_ask('Cloudy', dict(Sprinkler=T, Raining=F), wet).show_approx())
+print(enumeration_ask('Cloudy', dict(Sprinkler=T, Rain=F), wet).show_approx())
 
 # Compute P(WetGrass | it’s cloudy, the sprinkler is running and it’s raining)
-print(enumeration_ask('WetGrass', dict(Cloudy=T, Sprinkler=T, Raining=T), wet).show_approx())
+print(enumeration_ask('WetGrass', dict(Cloudy=T, Sprinkler=T, Rain=T), wet).show_approx())
 
 # Compute P(Cloudy | the grass is not wet)
 print(enumeration_ask('Cloudy', dict(WetGrass=F), wet).show_approx())
