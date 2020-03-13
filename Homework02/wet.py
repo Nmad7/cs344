@@ -16,6 +16,9 @@ wet = BayesNet([
     ('WetGrass', 'Sprinkler Rain', {(T, T): 0.99, (T, F): 0.90, (F, T): 0.90, (F, F): 0.00})
     ])
 
+# Compute P(cloudy)
+print(enumeration_ask('Cloudy', dict(), wet).show_approx())
+
 # Compute P(Sprinkler | cloudy)
 print(enumeration_ask('Sprinkler', dict(Cloudy=T), wet).show_approx())
 
