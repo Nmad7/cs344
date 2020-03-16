@@ -1,0 +1,49 @@
+1. We want the ML model to predict whether an online shopper is fraudulent.
+
+2.The ideal outcome would be that through using the ML model fraudulent purchases are able to be blocked or flagged before the purchase goes through.
+
+3. A success metric is decreasing number of fraudulent purchases.
+Our key results (KR) for the success metrics are a decrease in fraudulent purchases
+The ML model is a deemed a failure if it provides over 20% false positives and does not decrease the amount of fraudulent purchases.
+
+
+4. The output from our ML model will be a True if a shopper is fraudulent.
+
+5. The output from the ML model will be made between the user attempting to make the purchase and the purchase finishing processing.
+The outcome will be used for blocking the user from making a purchase deemed fraudulent or flagging that purchase for further involvement.
+
+6. If we didn't use ML, we would check signs that often mean a shopper is fraudulent and if the shopper has too many signs the purchase would
+be flagged. Some of these signs include: shipping address not matching billing address, VPN usage/ IP not matching country of address,
+using a VOIP Number, previous purchase history (fraud in their history), or amount of item being purchased (large is sometimes fraudulent),
+using a non-standard puchase method (such as gift cards or Privacy.com card). For example, if someone has 3 or more of these signs the
+purchase would be flagged.
+
+7.a.
+The problem is best framed as a binary classification which predicts whether a sale is fraudulent or not fraudulent.
+7.b.
+The problem is already a binary classification
+
+8.
+input1 = IP address location
+input2 = VPN used (true/false)
+input3 = Number of times the buyer has made a purchase before
+input4 = VOIP given (true/false)
+input5 = cost of item
+input6 = shipping address/billing address mismatch
+input7 = shipping speed
+output(label) = fraudulent / not fraudulent
+
+9.
+All base data can be received from the shopper/shopper's profile at checkout
+input1 = from shopper information
+input3 = can be received from checking purchasers ip against VPN checker APIs such as the IPHub API
+input4 = from shoppers profile/own database
+input4 = can also be received from various APIs through checking the given phone number
+input5 = from own database
+input6-7 = from shoppers information
+
+
+10.
+The best indicators of fraud could be:
+VPN use, shipping address/billing address mismatch, number of times buyer has made a purchase before
+

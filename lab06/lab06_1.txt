@@ -1,0 +1,7 @@
+Information gain from Hungry in Restraunt problem
+Gain(Hungry)= Entropy(Restraunt) - Remainder(hungry?)
+Remainder(hungry?)= 5/12*entropy(No) + 7/12*entropy(yes) = 5/12(-1(1/5*log2(1/5)+4/5*log2(4/5))) + 7/12(-1(5/7*log2(5/7) + 2/7*log2(2/7)))
+Remainder(hungry?)= .8043
+Gain(Hungry) = 1 - .8043 = .1957
+We gain more information from Patrons than from Hungry, but
+Hungry gains more information than Type which gives none.
