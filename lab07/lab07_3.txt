@@ -1,0 +1,28 @@
+a.
+Task1:
+california_housing_dataframe["rooms_per_person"] = (california_housing_dataframe["total_rooms"] / california_housing_dataframe["population"])
+calibration_data = train_model(
+    learning_rate=0.05,
+    steps=400,
+    batch_size=20,
+    input_feature="rooms_per_person"
+)
+Task2:
+plt.figure(figsize=(10,5))
+plt.subplot(1, 2, 2)
+plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+Task3:
+california_housing_dataframe["rooms_per_person"] = california_housing_dataframe["rooms_per_person"].apply(lambda x: min(x, 4))
+calibration_data = train_model(
+    learning_rate=0.05,
+    steps=400,
+    batch_size=20,
+    input_feature="rooms_per_person")
+
+b. Synthetic features are useful in that they allow combined data to be created from already held data. This allows
+two features to be added as input into a model as one input and learn about the relation between this combined data
+and another part of the data.
+
+c. Often in real data, data received will include outliers, data points that are outside of the normal distribution of data.
+When creating a prediction model that should predict most of the time, these outliers will only throw off the model and
+are therefore usually pruned.

@@ -1,0 +1,20 @@
+a.
+exercise 1:
+cities['Saint_And_Over_50miles'] = cities['City name'].apply(lambda name: name.startswith("San")) & cities['Area square miles'].apply(lambda size:size > 50)
+
+exercise 2:
+cities.reindex([2,0,1,5])
+This kind of behavior is allowed because often when pulling from real data sources there will often be indexes that can be missing their
+corresponding data. This allows for inserting real data with missing parts without having to first clean up the outside list. Furthermore when
+expanding the data to cover a larger data range reindex will allow us to expand but not fill everything with new data.
+
+b.
+Compared to numpy, the pandas dataframe with labeled columns allows us to keep track of data more easily. Overall, when dealing
+with data sets (especially when not just numerical) pandas seems more user friendly and readable. It is also possible to use pandas series
+with numpy allowing both to be combined.
+
+c.
+It would be useful to reorder Pandas data in many situations. For one, reorder the data can
+allow us to put it in a certain order, for instance by date/time or alphabetical. Reordering randomly can be
+useful in machine learning in order to not test on a data set that is ordered in a specific way which may
+influence the end AI.

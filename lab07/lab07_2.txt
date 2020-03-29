@@ -1,0 +1,11 @@
+1. Compare and contrast categorical vs numerical data
+Categorical data is descriptive data that puts the data into a category with examples like: country, house style, or race. Numerical data,
+on the other hand, is simply data that is a number such as salary or views of a page.
+2. Submit solutions to tasks 1–2. Include your best hyper-parameter values and the resulting RMSE, but not the training output.
+Task1: train_model(learning_rate=0.00002,steps=500,batch_size=5)  RMSE = 166.53
+Task2: train_model(learning_rate=.000055,steps=375,batch_size=100,input_feature="population") RMSE = 175.98
+
+3. What are the hyper-parameters learned in these exercises and is there a “standard” tuning algorithm for them? Explain your answer.
+Learning rate is related to the magnitude of updates to the weights of the model. Steps are the amount of times the batch size is
+fed into the system. Batch size is the amount of data given at one time. There is no one tuning algorithm to figure out what to use, only
+guidelines. Each data set and data set type does better with different arguments.
