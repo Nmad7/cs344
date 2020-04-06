@@ -1,0 +1,14 @@
+1. What good did the K-fold validation do in this exercise?
+Using K-fold validation allowed us to reliably validate the model even with relatively few data points.
+If straight validation was used then it would be much more likely that the part split off would not be
+representative of the whole and therefore not be a good source of validation.
+2. Chollet claims that it would be problematic to use data values with “wildly different ranges”. Why is this?
+If the ranges on data values vary widely between columns than a value of $1000 would start with more impact than
+a value of 1 for a non money related value. A larger value will have more influence if not normalized even if it is not
+any more predictive than a smaller value range.
+3. Chollet also claims that smaller datasets “prefer” smaller networks. Do you agree? Explain your answer.
+If larger networks are trained on smaller datasets they would often end up over specialized to that specific dataset
+and not be able to fit to other data sets. They would pick up and predict the noise and outliers in that small data set.
+
+4. Try networks with one more and one less hidden layer, and wider or narrower layers.
+   Do any of your alternatives do better than the suggested architecture? Why or why not?
