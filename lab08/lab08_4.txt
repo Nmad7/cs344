@@ -12,5 +12,5 @@ and not be able to fit to other data sets. They would pick up and predict the no
 
 4. Try networks with one more and one less hidden layer, and wider or narrower layers.
    Do any of your alternatives do better than the suggested architecture? Why or why not?
-   Having only one hidden layer seemed to reduce the error a little bit. Making more hidden layers increases the
-   error presumably because the model fits more to the model.
+   You cannot really remove any of the hidden layers as there is only one input and one output.
+   Making two more hidden layers of size 20 and 9 actually increased the accuracy by around $200.
