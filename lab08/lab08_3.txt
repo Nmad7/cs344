@@ -25,3 +25,6 @@ The bucketing for this task seemed arbitrary to me in terms of how many buckets 
 
 Task 2:
 long_x_lat = tf.feature_column.crossed_column(set([bucketized_longitude, bucketized_latitude]), hash_bucket_size=1000)
+
+Another feature cross that could be done is crossing total_rooms with total_bedrooms as in a block with high income there
+could be more rooms but less bedrooms.
