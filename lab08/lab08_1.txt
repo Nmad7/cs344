@@ -1,0 +1,55 @@
+a.
+Task1:
+The value for Median income's unit is unknown. Furthermore the median house value seems to be artificially capped at 500. \
+The max for total number of rooms is 32627, way higher than the average meaning it could be an outlier.
+Task2:
+The distribution of data between the training set and the validation set is sometimes very different in a
+couple of the categories which optimally should not be the case. For instance, the rooms per person max and
+mean are both very different between the two.
+Task3:
+The bug in the code was that the data had not been randomized at all and was probably sorted in some way leading to
+the distribution of data to be bad. The randomization code needed to be uncommented.
+Task4: I added the below lines to the preset code
+training_input_fn = lambda: my_input_fn(training_examples, training_targets["median_house_value"], batch_size=batch_size)
+predict_training_input_fn = lambda: my_input_fn(training_examples, training_targets["median_house_value"], num_epochs=1, shuffle=False)
+predict_validation_input_fn = lambda: my_input_fn(validation_examples, validation_targets["median_house_value"], num_epochs=1, shuffle=False)
+
+training_predictions = linear_regressor.predict(input_fn=predict_training_input_fn)
+training_predictions = np.array([item['predictions'][0] for item in training_predictions])
+validation_predictions = linear_regressor.predict(input_fn=predict_validation_input_fn)
+validation_predictions = np.array([item['predictions'][0] for item in validation_predictions])
+
+linear_regressor = train_model(
+    learning_rate=0.0001,
+    steps=100,
+    batch_size=90,
+    training_examples=training_examples,
+    training_targets=training_targets,
+    validation_examples=validation_examples,
+    validation_targets=validation_targets)
+
+
+Task5:
+
+california_housing_test_data = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv", sep=",")
+test_examples = preprocess_features(california_housing_test_data)
+test_targets = preprocess_targets(california_housing_test_data)
+
+predict_test_input_fn = lambda: my_input_fn(test_examples, test_targets["median_house_value"], num_epochs=1, shuffle=False)
+test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+root_mean_squared_error = math.sqrt(
+    metrics.mean_squared_error(test_predictions, test_targets))
+
+print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)
+
+My final RMSE was 161.03 which means the generalized performance of my model is fairly good. This is actually better
+than my previous RMS which means it is very generalizable.
+
+b.
+Using Training, Validation, and Testing data sets with a model has allowed me to see how these three components fit together.
+I learned the training data set is used while checking the model against the validation data set to improve the model during
+training. After that, the testing data set is used to check if the model is able to fit other sets of data or is attuned only
+to the training and validation set. I also learned how important it is to have quality data when training as this ultimately determines
+the quality of the model. Finally, I learned that using multiple features in combination can often improve a model.

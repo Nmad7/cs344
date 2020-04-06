@@ -1,0 +1,28 @@
+1. What does the Pearson correlation coefficient measure? Identify one example value from the correlation table you compute and explain why it makes sense.
+The Pearson correlation coefficient measures how strong the relationship between two features is (how predictive they are of each other). An example would be the correlation between number of rooms and number of bedrooms.
+There is nearly a full 1 (.9) correlation between these two values which makes sense as generally the more rooms there are the more bedrooms there would be.
+2. Submit your solutions to tasks 1–2. Include the features you selected for task 1 and the synthetic features you developed for task 2; include the final RMS errors but not the training output. Did you beat the Google-provided baselines?
+Task 1:
+minimal_features = ["median_income","rooms_per_person",]
+learning_rate=0.05, steps=500, batch_size=600
+RMSE = 84.33
+Task 2:
+training_examples["In_SF_or_LA"] = training_examples["latitude"].apply(
+    lambda l: 1.0 if (33 <= l <=35) or  (37 <= l <= 39) else 0.0)
+validation_examples["In_SF_or_LA"] = validation_examples["latitude"].apply(
+    lambda l: 1.0 if (33 <= l <=35) or  (37 <= l <= 39) else 0.0)
+synthetic_features = ["median_income","In_SF_or_LA",
+]
+synthetic_training_examples = training_examples[synthetic_features]
+synthetic_validation_examples = validation_examples[synthetic_features]
+_ = train_model(
+    learning_rate=0.03,
+    steps=500,
+    batch_size=5,
+    training_examples=synthetic_training_examples,
+    training_targets=training_targets,
+    validation_examples=synthetic_validation_examples,
+    validation_targets=validation_targets)
+
+RMSE:83.84
+Both beat the baseline

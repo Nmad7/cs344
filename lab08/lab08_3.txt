@@ -1,0 +1,27 @@
+a. They recommend FTRL for L1 optimization, but the code specifies the same rate (learning_rate) for all runs. How is FTRL managing the learning rate?
+The linear_regressor object uses an optimizer which is passed the learning rate rather than the learning rate straight. This allows the learning rate to be modified.
+b. What good does the bucketing/binning do?
+Bucketing/binning condenses data into a more simplified form and removes data noise which can allow the model to focus more on overall patterns and remove outliers.
+c. Submit your solutions to tasks 1–2. Did you find their task 1 bucketing to make sense? Identify one unique feature cross for task 2 and explain how it could be useful.
+Task 1:
+  #Divide Latitude into 10 buckets
+  bucketized_latitude = tf.feature_column.bucketized_column(
+    latitude, boundaries=get_quantile_based_boundaries(
+      training_examples["latitude"], 10))
+  #Divide Median Age into 7 buckets
+  bucketized_housing_median_age = tf.feature_column.bucketized_column(
+    housing_median_age, boundaries=get_quantile_based_boundaries(
+      training_examples["housing_median_age"], 7))
+  #Divide Median Income into 7 buckets
+  bucketized_median_income = tf.feature_column.bucketized_column(
+    median_income, boundaries=get_quantile_based_boundaries(
+      training_examples["median_income"], 7))
+  #Divide Rooms per person into 7 buckets
+  bucketized_rooms_per_person = tf.feature_column.bucketized_column(
+    rooms_per_person, boundaries=get_quantile_based_boundaries(
+      training_examples["rooms_per_person"], 7))
+
+The bucketing for this task seemed arbitrary to me in terms of how many buckets to create.
+
+Task 2:
+long_x_lat = tf.feature_column.crossed_column(set([bucketized_longitude, bucketized_latitude]), hash_bucket_size=1000)
