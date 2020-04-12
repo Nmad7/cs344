@@ -1,5 +1,10 @@
 a. Why are we regularizing with respect to sparsity?
-
+We are regularizing with respect to sparsity because we wish to increase sparsity. Increasing sparsity means
+decreasing our parameters which means the model will not overfit as often and will also be more efficient as it
+has less parameters.
 b. How does L1 regularization increase sparsity?
-
+L1 regularization increases sparsity through limiting and size of parameters and also eliminating parameters that are
+less useful. Decreasing the number of parameters in the model increases sparsity through decreasing the number of used
+parameters.
 c. Task 1: Here, just report the best log loss value / model size you can get and what gamma value you used to get them.
+I used a .75 reg value to get a model size of 587 and a log loss of .25.
