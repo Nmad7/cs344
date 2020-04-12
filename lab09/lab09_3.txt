@@ -1,0 +1,1 @@
+a. Try Chollet’s “Further experiments”. Do any of the alternatives do better than the suggested architecture? Why or why not?

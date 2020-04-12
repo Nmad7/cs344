@@ -1,0 +1,5 @@
+a. Why are we regularizing with respect to sparsity?
+
+b. How does L1 regularization increase sparsity?
+
+c. Task 1: Here, just report the best log loss value / model size you can get and what gamma value you used to get them.

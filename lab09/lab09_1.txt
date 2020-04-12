@@ -1,0 +1,10 @@
+a. How effective is the linear regression approach to the problem?
+It is does have some functionality but has a good deal of inaccuracy on this problem as it isn't as precise when dealing with problems binary in nature, its better with
+more continuous quantities.
+b. Task 1: Compare and contrast L2 Loss vs LogLoss.
+Log Loss is better at penalizing confidence errors when a probability is used
+for an output. In general Log Loss is better with classification while when dealing with quantities
+the L2 loss would probably be better.
+c. Task 2: Explain how effective logistic regression is compared with linear regression.
+Logistic regression is much more effective than linear regression on this problem
+d. Task 3: Here, just report the best values you can achieve for AUC/accuracy and what hyperparameters you used to get them.

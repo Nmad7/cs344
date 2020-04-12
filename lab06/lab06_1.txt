@@ -1,5 +1,5 @@
-Information gain from Hungry in Restraunt problem
-Gain(Hungry)= Entropy(Restraunt) - Remainder(hungry?)
+Information gain from Hungry in restaurant problem
+Gain(Hungry)= Entropy(restaurant) - Remainder(hungry?)
 Remainder(hungry?)= 5/12*entropy(No) + 7/12*entropy(yes) = 5/12(-1(1/5*log2(1/5)+4/5*log2(4/5))) + 7/12(-1(5/7*log2(5/7) + 2/7*log2(2/7)))
 Remainder(hungry?)= .8043
 Gain(Hungry) = 1 - .8043 = .1957
