@@ -1,12 +1,19 @@
 a. Try Chollet’s “Further experiments”. Do any of the alternatives do better than the suggested architecture? Why or why not?
+
 1. We were using 2 hidden layers. Try to use 1 or 3 hidden layers and see how it affects validation and test accuracy.
 When using all default settings besides changing the layer number, using 1 hidden layer did not actually impact the
 test accuracy very much, it got a score of 88.6% which is actually slightly higher than using 2 layers.
-Using 3 hidden layers decreases the accuracy by to 87% which is not a huge difference.
+Using 3 hidden layers decreases the accuracy to around 87% which is not a huge difference but is lower.
+
 2. Try to use layers with more hidden units or less hidden units: 32 units, 64 units
-Using layers with moree hidden units led to a decreased accuracy of 84.8%. Decreasing the hidden units to 8 units did
+Using layers with more hidden units led to a decreased accuracy of 84.8%. Decreasing the hidden units to 8 units did
 not decrease the accuracy and led to an accuracy of 88.6%.
 
 
 3. Try to use the mse loss function instead of binary_crossentropy.
+Using MSE instead of binary crossentropy resulted in a slightly lower accuracy of 87.9%.
+
 4. Try to use the tanh activation (an activation that was popular in the early days of neural networks) instead of relu.
+Using Tanh activation did not seem to change the results too much resulting in an accuracy of 87.5% which is just slightly lower than relu.
+
+Overall, using
