@@ -6,8 +6,8 @@ The first CNN is fairly similar in structure to the one we did in class. They bo
 use three convolutions, but the Google CNN uses MaxPooling on the third convolution while
 in class we did not. Both use filters of 3x3 size and max pooling layers of 2x2. The number
 of filters extracted is different between the two with the Google CNN using 16,32,64 while
-in class for the MNIST image classification we used 32,64,64. In the end of course, the google
-CNN is a binary classification making the final layer different from the MNIST image classification.
+in class for the MNIST image classification we used 32,64,64. In the end, the google
+CNN is a binary classification making the final output layer different from the MNIST image classification.
 3. Can you see any interesting patterns in the intermediate representations?
 One interesting thing that the intermediate representations show is that the model is very good
 at removing the background of images or at least recognizing it as not important. It is very good
