@@ -1,0 +1,12 @@
+Task #1 — What are the biases present in the given dataset?
+There are more males than females in the dataset which could lead to bias, a good split would be 50/50. Race is heavily skewed towards
+white in the data set.
+Task #2 — Assess the potential bias in some other feature besides education level.
+In regards to race, the data shows some bias in income bracket. For instance, the other race section has nearly no
+representation in the above 50k data. Overall one of the biggest sources of bias that would show up in this dataset is that
+it only covers those who work 1 or more hours, which leaves out a large amount of people in America who do not work.
+Task #3 — Do as written.
+Task #4 — Do you find disparities when you look at race rather than gender? If so, which way to they skew?
+The data in race is heavily biased towards false negatives meaning the model tends to have more wrong predictions that
+people make less than 50k. This is made worse by the accuracy disparities in race. The Amer-Indian-Eskimo category,
+for instance, is a around 10% less accurate than Asian-Pac-Islander, Other, and White at 61.54%. Black also has low accuracy.

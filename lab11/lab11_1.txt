@@ -1,0 +1,15 @@
+Task 1: Is a linear model ever preferable to a deep NN model?
+A linear model definitely can be preferable in some instances. While a deep Neural Network can model every
+linear model, it is often overkill to use a deep Neural Network as it would take more parameters to do the
+same thing. It is sometimes faster and easier to use a linear model for a linear problem.
+Task 2: Does the NN model do better than the linear model?
+The NN model seems to have varying performance when trained multiple times but overall it seems to do a little better.
+Task 3: Do embeddings do much good for sentiment analysis tasks?
+They do not seem to do significantly better than the linear model.
+Tasks 4–5: Name two words that have similar embeddings and explain why that makes sense.
+Disappointing and boring seem to have similar embeddings over multiple trainings of the model for me. This would make
+sense as they would be used in similar situations in sentences to describe a negative sentiment towards a movie. Both words represent
+that the reviewer thinks the overall movie is that thing.
+Task 6: Report your best hyper-parameters and their resulting performance.
+I used the full word list using Adam with a learning rate of .005, two hidden layers of 128 and 64, and steps=2500 resulted
+in a test accuracy of 87.104%.
