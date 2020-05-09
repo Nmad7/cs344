@@ -1,0 +1,17 @@
+A is on B
+B is on C
+The table supports C
+For any two entities, if the first entity supports the second, then the second is on the first.
+For any two entities, if the first entity is on the second, then the first is “above” the second.
+For any three entities, if the first entity is above the second which is above the third, then the first is above the third.
+
+FOL facts:
+on(a,b)
+on(a,c)
+supporting(table,c)
+∀X,Y supporting(X,Y) → on(Y,X)
+∀X,y on(X,Y) → above(X,Y)
+∀X,y,z above(X,Y)∧above(Y,Z) → above(X,Z)
+
+Prove: above(a,table)
+above(X,Y)
