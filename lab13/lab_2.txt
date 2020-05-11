@@ -7,11 +7,20 @@ For any three entities, if the first entity is above the second which is above t
 
 FOL facts:
 on(a,b)
-on(a,c)
+on(b,c)
 supporting(table,c)
 ∀X,Y supporting(X,Y) → on(Y,X)
-∀X,y on(X,Y) → above(X,Y)
-∀X,y,z above(X,Y)∧above(Y,Z) → above(X,Z)
+∀X,Y on(X,Y) → above(X,Y)
+∀X,Y,Z above(X,Y)∧above(Y,Z) → above(X,Z)
 
 Prove: above(a,table)
-above(X,Y)
+convert all implies to cnf:
+on(a,b)
+on(b,c)
+supporting(table,c)
+¬supporting(X,Y) V on(Y,X)
+¬on(X,Y) V above(X,Y)
+¬above(X,Y) ∨ ¬above(Y,Z) V above(X,Z)
+
+Work:
+Inside JPG

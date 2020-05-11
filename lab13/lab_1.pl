@@ -56,6 +56,12 @@ If so, demonstrate how it’s done; if not, explain why not. If it doesn’t, ca
 
 Yes prolog implements a version of generalized modus ponens. Prolog uses Horn clauses which are based
 around modus ponens with variables and instantiation.
+One exmaple would be:
+Handsome(John)
+Kind(Y)
+Handsome(X) ∧ Kind(X) → Attractive(X)
+Prolog would be able to fill unifgy X and Y to John to get
+Attractive(John)
 
 
 */
